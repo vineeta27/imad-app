@@ -18,3 +18,9 @@ var button=document.getElementById('counter');
      request.open('GET','http://vineetasuthar2000.imad.hasura-app.io/counter',true);
      request.send(null);
  };
+ 
+ var nameInput=document.getElementById('name');
+ nameInput.onclick = function(){
+   
+     
+ };
