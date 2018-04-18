@@ -9,8 +9,49 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var about={
+  title: 'About Section',
+  heading: 'Movies of Minion',
+  content: `<ol>
+               <li>Despicabel ME 1 2010 </li>
+               <li>Despicabel ME 2 2013</li>
+               <li>Despicabel ME 3 2017</li>
+               <li>Minions 2015 </li>
+           </ol>`
+};
+
+function createTemplate(data)
+{
+    var title=data.title;
+    var heading=data.heading;
+    var content=data.content;
+    var htmlTemplate=
+    `<html>
+           <head>
+               <title>${title}</title>
+               <meta name='viewport' content='width-device-width, initial-scale-1'/>
+                <link href="/ui/style.css" rel="stylesheet" />
+           </head>
+           <body>
+               <div>
+                   <a href='/'>Home</a>
+               </div>
+               <div>
+                   <h1>${heading}</h1>
+               </div>
+               <div>
+                   ${content}
+               </div>
+           </body>
+     </html>
+ `;
+ return htmlTemplate;
+}
+
+
+
 app.get('/about', function(req,res){
-    res.sendFile(path.join(__dirname,'ui', 'about.html'));
+    res.send(createTemplate(about));
 });
 
 app.get('/minion', function(req,res){
