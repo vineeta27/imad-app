@@ -30,7 +30,7 @@ var button=document.getElementById('counter');
    var list='';
    for(var i=0; i<names.length; i++)
    {
-       list+=names[i];
+       list+='<li>'+names[i]+'</li>';
    }
    var ul=document.getElementById('ul');
    ul.innerHTML=list;
