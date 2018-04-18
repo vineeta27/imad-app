@@ -83,8 +83,8 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.get('/ui/minion.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'minion.jpg'));
+app.get('/ui/minions.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'minions.jpg'));
 });
 
 
