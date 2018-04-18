@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 var obj={
-    var about: {
+    'about': {
                   title: 'About Section',
                   heading: 'Movies of Minion',
                   content: `<ol>
@@ -18,8 +18,8 @@ var obj={
                                <li>Despicabel ME 3 2017</li>
                                <li>Minions 2015 </li>
                            </ol>`
-               }
-    var minion:{
+               },
+    'minion':{
                   title: 'Minion Section',
                   heading: 'Welcome to the World  of Minion',
                   content: `<ol>
@@ -27,8 +27,8 @@ var obj={
                                <li>Kevin </li>
                                <li>Staurt</li>
                            </ol>`  
-               }
-    var agnes:{
+               },
+    'agnes':{
                   title: 'Agnes Section',
                   heading: 'family of Agnes',
                   content: `<ol>
@@ -40,8 +40,7 @@ var obj={
               }
 };
 
-function createTemplate(data)
-{
+function createTemplate(data){
     var title=data.title;
     var heading=data.heading;
     var content=data.content;
@@ -70,16 +69,11 @@ function createTemplate(data)
 
 
 
-app.get('/about', function(req,res){
-    res.send(createTemplate(about));
+app.get('/:name', function(req,res){
+    var name=req.params.name;
+    res.send(createTemplate(obj[name]));
 });
 
-app.get('/minion', function(req,res){
-   res.sendFile(path.join(__dirname,'ui', 'minion.html'));
-});
-app.get('/agnes', function(req,res){
-   res.sendFile(path.join(__dirname,'ui', 'agnes.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
