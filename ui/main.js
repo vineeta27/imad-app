@@ -20,6 +20,8 @@ var button=document.getElementById('counter');
  };
  
  var nameInput=document.getElementById('name');
+ var name = nameInput.value;
+ var submit=document.getElementById('')
  nameInput.onclick = function(){
    
      
