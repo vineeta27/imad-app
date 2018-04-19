@@ -104,7 +104,7 @@ app.get('/submit-name', function(req,res){
 });
 
 app.get('/obj/:name', function(req,res){
-    pool.query("SELECT * FROM obj where title=" + req.params.name, function(err,result){
+    pool.query("SELECT * FROM obj where title='" + req.params.name +"'", function(err,result){
         if(err){
             res.status(500).send(err.toString());
         }
