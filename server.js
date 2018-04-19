@@ -76,7 +76,7 @@ function createTemplate(data){
 }
 
 
-var ab=new pool(config);
+/*var ab=new pool(config);
 app.get('/test-db',function(req,res){
     ab.query('SELECT * FROM test', function(err,result){
        if(err){
@@ -87,7 +87,7 @@ app.get('/test-db',function(req,res){
        }
         
     });   
-});
+});*/
 
 var counter = 0;
 app.get('/counter', function(req,res){
