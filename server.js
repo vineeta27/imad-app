@@ -16,37 +16,6 @@ app.use(morgan('combined'));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-var obj={
-    'about': {
-                  title: 'About Section',
-                  heading: 'Movies of Minion',
-                  content: `<ol>
-                               <li>Despicabel ME 1 2010 </li>
-                               <li>Despicabel ME 2 2013</li>
-                               <li>Despicabel ME 3 2017</li>
-                               <li>Minions 2015 </li>
-                           </ol>`
-               },
-    'minion':{
-                  title: 'Minion Section',
-                  heading: 'Welcome to the World  of Minion',
-                  content: `<ol>
-                               <li>Bob </li>
-                               <li>Kevin </li>
-                               <li>Staurt</li>
-                           </ol>`  
-               },
-    'agnes':{
-                  title: 'Agnes Section',
-                  heading: 'family of Agnes',
-                  content: `<ol>
-                               <li>Dad: Gru </li>
-                               <li>Mom: Lucy</li>
-                               <li>Sister: Margo</li>
-                               <li>Sister: Edith</li>
-                           </ol>`  
-              }
-};
 
 function createTemplate(data){
     var title=data.title;
