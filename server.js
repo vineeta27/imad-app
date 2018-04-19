@@ -1,7 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var pool= require('pg').pool;
+var Pool= require('pg').Pool;
 
 var config={
     user: 'vineetasuthar2000',
@@ -76,9 +76,9 @@ function createTemplate(data){
 }
 
 
-var ab=new pool(config);
+var pool=new Pool(config);
 app.get('/test-db',function(req,res){
-    ab.query('SELECT * FROM test', function(err,result){
+    pool.query('SELECT * FROM test', function(err,result){
        if(err){
            res.status(500).send(err.toString());
        }
