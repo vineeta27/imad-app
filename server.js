@@ -77,7 +77,7 @@ function createTemplate(data){
 
 
 var ab=new pool(config);
-app.get('/db',function(req,res){
+app.get('/test-db',function(req,res){
     ab.query('SELECT * FROM test', function(err,result){
        if(err){
            res.status(500).send(err.toString());
