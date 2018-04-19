@@ -103,9 +103,23 @@ app.get('/submit-name', function(req,res){
     
 });
 
-app.get('/:name', function(req,res){
-    var name=req.params.name;
-    res.send(createTemplate(obj[name]));
+app.get('/obj/:name', function(req,res){
+    pool.query("SELECT * FROM obj where title=" + req.params.name, function(err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            if(result.rows.lenght===0){
+                res.status(404).send('not found');
+              }
+              else{
+                  var objData=result.rows[0];
+                   res.send(createTemplate(objData));
+              }
+        }
+        
+    });
+    
 });
 
 
